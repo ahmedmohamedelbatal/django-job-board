@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% load bootstrap4 %}
+{% if user.is_superuser %}
+<div class="bradcam_area bradcam_bg_1">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="bradcam_text">
+          <h3>Job Orders</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="" style="padding-top: 50px; padding-bottom: 70px">
+  <div class="container">
+    <div class="main-body">
+      <div class="row">
+        <table class="col table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Job Order</th>
+              <th scope="col">Profile</th>
+              <th scope="col">Email</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Address</th>
+              <th scope="col">Website</th>
+              <th scope="col">CV</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for job_order in job_orders %}
+            <tr>
+              <th scope="row">{{job_order.id}}</th>
+              <td>{{job_order.job}}</td>
+              <td>{% if job_order.profile.user.first_name or job_order.profile.user.last_name %} {{job_order.profile.user.first_name}} {{job_order.profile.user.last_name}} {% else %} not found {% endif %}</td>
+              <td>{{job_order.profile.user.email}}</td>
+              <td>{{job_order.profile.phone_number}}</td>
+              <td>{{job_order.profile.address}}</td>
+              <td>{{job_order.website_link}}</td>
+              <td><a href="{{ job_order.cv.url }}">show cv</a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+{% endblock content %}

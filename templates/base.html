@@ -23,7 +23,7 @@
               <div class="row align-items-center">
                 <div class="col-xl-3 col-lg-2">
                   <div class="logo">
-                    <a href="#">
+                    <a href="{% url 'jobs:jobs' %}">
                       <h3>Job-Board</h3>
                     </a>
                   </div>
@@ -32,11 +32,11 @@
                   <div class="main-menu d-none d-lg-block">
                     <nav>
                       <ul id="navigation">
-                        <li><a href="#">Home</a></li>
+                        <li><a href="{% url 'jobs:jobs' %}">Home</a></li>
                         {% if user.is_superuser %}
-                        <li><a href="#">Job Orders</a></li>
-                        <li><a href="#">Add Job</a></li>
-                        <li><a href="#">Add Category</a></li>
+                        <li><a href="{% url 'jobs:job_orders' %}">Job Orders</a></li>
+                        <li><a href="{% url 'jobs:add_job' %}">Add Job</a></li>
+                        <li><a href="{% url 'jobs:add_category' %}">Add Category</a></li>
                         {% endif %}
                       </ul>
                     </nav>

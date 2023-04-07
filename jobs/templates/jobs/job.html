@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+{% load bootstrap4 %}
+<div class="bradcam_area bradcam_bg_1">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="bradcam_text">
+          <h3>{{job.job_category}}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="job_details_area">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="job_details_header">
+          <div class="single_jobs white-bg d-flex justify-content-between">
+            <div class="jobs_left d-flex align-items-center">
+              <div class="thumb">
+                {% if job.job_image %}
+                <img src="{{job.job_image.url}}" alt="" width="60px" />
+                {% else %}
+                <img src="{% static 'images/default_img.png' %}" alt="" />
+                {% endif %}
+              </div>
+              <div class="jobs_conetent">
+                <a href=""><h4>{{job.job_title}}</h4></a>
+                <div class="links_locat d-flex align-items-center">
+                  <div class="location">
+                    <p><i class="fa fa-map-marker"></i> {{job.job_location}}</p>
+                  </div>
+                  <div class="location">
+                    <p><i class="fa fa-clock-o"></i> {{job.job_type}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="descript_wrap white-bg">
+          <div class="single_wrap">
+            <h4>Job description</h4>
+            <p>
+              {{job.job_description}}
+            </p>
+          </div>
+        </div>
+        {% if user.is_superuser %}
+        {% else %}
+        <div class="apply_job_form white-bg">
+          <h4 style="padding-bottom: 20px">Apply for the job</h4>
+          <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <div class="col-md-12">
+              <div class="submit_btn">
+                <button class="main-btn w-100" type="submit">Apply Now</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        {% endif %}
+      </div>
+      <div class="col-lg-4">
+        <div class="job_sumary">
+          <div class="summery_header">
+            <h3>Job Summery</h3>
+          </div>
+          <div class="job_content">
+            <ul>
+              <li>Vacancy: <span>{{job.job_vacancy}}</span></li>
+              <li>Salary: <span>${{job.job_salary}}</span></li>
+              <li>Location: <span>{{job.job_location}}</span></li>
+              <li>Job Type: <span> {{job.job_type}}</span></li>
+              <li>Published on: <span>{{job.created_at|date:"d M, Y"}}</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
