@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+{% load bootstrap4 %}
+{% if user.is_authenticated %}
+<div class="bradcam_area bradcam_bg_1">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="bradcam_text">
+          <h3>You are already logged in!</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% else %}
+<div class="bradcam_area bradcam_bg_1">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="bradcam_text">
+          <h3>Registration</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="" style="padding-top: 50px; padding-bottom: 70px">
+  <div class="container">
+    <div class="main-body">
+      <div class="row gutters-sm">
+        <div class="col-md-8 mx-auto">
+          <div class="card">
+            <div class="card-body">
+              <form method="POST">
+                {% csrf_token %}
+
+                {% bootstrap_form form %}
+                
+                <p><a href="{% url 'login' %}">Back to login ?</a></p>
+                <input class="col btn btn-info" type="submit" value="Signup">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+{% endblock content %}
