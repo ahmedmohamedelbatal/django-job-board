@@ -1,0 +1,533 @@
+/* - table of content - start
+==================================================================================================== */
+/* --------------------------------------------------
+Theme Name:     Job Board. Main Website
+
+File:           CSS Base
+Version:        1.0
+By:             Ahmed Elbatal
+Author:         Job Board.
+-------------------------------------------------- */
+/* --------------------------------------------------
+* 1 = Fonts-load & Global-area
+* 2 = Header Section
+* 3 = Job List
+* 4 = Job Details
+
+-------------------------------------------------- */
+/* - table of content - end
+==================================================================================================== */
+
+/* - 1 - fonts-load & global-area - start
+==================================================================================================== */
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap");
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+li {
+  list-style: none;
+}
+
+a, button {
+  color: #1F1F1F;
+  outline: medium none;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+a:focus, a:hover, .button:focus, button:focus {
+  text-decoration: none;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #7A838B;
+  margin-bottom: 13px;
+  font-family: "Roboto", sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "Roboto", sans-serif;
+  color: #191d34;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 1.2em;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+label {
+  color: #7e7e7e;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.white-bg {
+  background: #ffffff;
+}
+
+.delete-btn {
+  background: rgb(245, 38, 38);
+  color: #fff;
+  display: inline-block;
+  padding: 13px 29px 13px 29px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  border: 0;
+  border: 1px solid transparent;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  text-align: center;
+  color: #fff !important;
+  text-transform: capitalize;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.main-btn {
+  background: #00D363;
+  color: #fff;
+  display: inline-block;
+  padding: 13px 29px 13px 29px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  border: 0;
+  border: 1px solid transparent;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  text-align: center;
+  color: #fff !important;
+  text-transform: capitalize;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+/* - 1 - fonts-load & global-area - end
+==================================================================================================== */
+
+/* - 2 - Header Section - start
+==================================================================================================== */
+
+.header-area {
+  left: 0;
+  right: 0;
+  width: 100%;
+  top: 0;
+  z-index: 9;
+  position: absolute;
+}
+
+.header-area .main-header-area {
+  background: #fff;
+  background: transparent;
+  padding: 0px 150px;
+}
+
+.header-area a h3 {
+  color: #fff;
+}
+
+.header-area .main-header-area .main-menu {
+  text-align: center;
+}
+
+.header-area .main-header-area .main-menu ul li {
+  display: inline-block;
+  position: relative;
+  margin: 0 25px;
+}
+
+.header-area .main-header-area .main-menu ul li:first-child a {
+  padding-left: 0;
+}
+
+.header-area .main-header-area .main-menu ul li a {
+  color: #fff;
+  font-size: 15px;
+  text-transform: capitalize;
+  font-weight: 500;
+  display: inline-block;
+  padding: 35px 0px 35px 0px;
+  font-family: "Roboto", sans-serif;
+  position: relative;
+  text-transform: capitalize;
+}
+
+.header-area .main-header-area .Appointment {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-justify-content: flex-end;
+  -moz-justify-content: flex-end;
+  -ms-justify-content: flex-end;
+  justify-content: flex-end;
+  -ms-flex-pack: flex-end;
+}
+
+.header-area .main-header-area .Appointment .phone_num {
+  margin-right: 30px;
+}
+
+.header-area .main-header-area .Appointment .phone_num a {
+  font-size: 14px;
+  font-weight: 400;
+  color: #FFFFFF;
+}
+
+.bradcam_area {
+  background-size: cover;
+  background-position: center;
+  padding: 182px 0 102px 0;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 0;
+  background-size: cover;
+}
+
+.bradcam_bg_1 {
+  background-image: url(../images/banner/bradcam.png);
+}
+
+.bradcam_area h3 {
+  font-size: 56px;
+  color: #fff;
+  font-weight: 400;
+  margin-bottom: 0;
+  text-transform: capitalize;
+}
+
+/* - 2 - Header Section - end
+==================================================================================================== */
+
+/* - 3 - Job List - start
+==================================================================================================== */
+
+.job_listing_area.plus_padding {
+  padding-top: 100px;
+}
+
+.job_listing_area {
+  background: #F5F7FA;
+  padding-bottom: 80px;
+}
+
+.job_listing_area .job_filter {
+  padding: 25px;
+  display: block;
+}
+
+.job_listing_area .job_filter h3 {
+  font-size: 20px;
+  margin-bottom: 25px;
+  color: #001D38;
+  font-weight: 400;
+}
+
+.job_listing_area .job_filter .form_inner .single_field input {
+  height: 60px;
+  border: 1px solid #E8E8E8;
+  padding: 20px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.job_listing_area .job_filter .form_inner .single_field .nice-select {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  color: #7A838B;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.recent_joblist {
+  padding: 15px 20px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.recent_joblist h4 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+  color: #001D38;
+  margin-bottom: 0;
+}
+
+.recent_joblist .nice-select {
+  width: 180px;
+  height: 50px;
+  line-height: 50px;
+  color: #7A838B;
+  font-size: 16px;
+}
+
+.job_listing_area .job_lists {
+  margin-top: 50px;
+}
+
+.job_listing_area .job_lists .single_jobs {
+  padding: 30px;
+  margin-bottom: 12px;
+  border: 1px solid transparent;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.job_listing_area .job_lists .single_jobs .jobs_left .thumb {
+  float: left;
+  width: 90px;
+  height: 90px;
+  border-radius: 5px;
+  padding: 15px;
+  margin-right: 25px;
+}
+
+.job_listing_area .job_lists .single_jobs .jobs_left .jobs_conetent {
+  float: left;
+}
+
+.job_listing_area .job_lists .single_jobs .jobs_left .jobs_conetent h4 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: 400;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.job_listing_area .job_lists .single_jobs .jobs_left .jobs_conetent .links_locat .location {
+  margin-right: 50px;
+}
+
+.job_listing_area .job_lists .single_jobs .jobs_left .jobs_conetent .links_locat .location p {
+  margin-bottom: 0;
+  font-size: 16px;
+  color: #AAB1B7;
+}
+
+.job_listing_area .job_lists .single_jobs .jobs_left .jobs_conetent .links_locat .location p i {
+  margin-right: 7px;
+}
+
+.pagination_wrap {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination_wrap ul li {
+  display: inline-block;
+}
+
+.pagination_wrap ul li a {
+  width: 38px;
+  height: 38px;
+  border: 1px solid #EAEAEA;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  font-size: 16px;
+  text-align: center;
+  line-height: 38px;
+  display: inline-block;
+  color: #AAB1B7;
+  font-size: 14px;
+  margin: 0 4px;
+}
+
+.pagination_wrap ul li a i {
+  line-height: 38px;
+}
+
+.ti-angle-left:before {
+  content: "\e64a";
+}
+
+.pagination_wrap ul li a span {
+  line-height: 38px;
+}
+
+.ti-angle-right:before {
+  content: "\e649";
+}
+
+/* - 3 - Job List - end
+==================================================================================================== */
+
+/* - 4 - Job Details - start
+==================================================================================================== */
+
+.job_details_area {
+  background: #F5F7FA;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.job_details_area .single_jobs {
+  padding: 30px;
+  border-bottom: 1px solid #EAEAEA;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.job_details_area .single_jobs .jobs_left .thumb {
+  float: left;
+  width: 90px;
+  height: 90px;
+  border-radius: 5px;
+  padding: 15px;
+  margin-right: 25px;
+}
+
+.job_details_area .single_jobs .jobs_left .jobs_conetent h4 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: 400;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.job_details_area .single_jobs .jobs_left .jobs_conetent .links_locat .location {
+  margin-right: 50px;
+}
+
+.job_details_area .single_jobs .jobs_left .jobs_conetent .links_locat .location p {
+  margin-bottom: 0;
+  font-size: 16px;
+  color: #AAB1B7;
+}
+
+.job_details_area .single_jobs .jobs_left .jobs_conetent .links_locat .location p i {
+  margin-right: 7px;
+}
+
+.job_details_area .descript_wrap {
+  padding: 40px;
+}
+
+.job_details_area .descript_wrap .single_wrap:last-child {
+  margin-bottom: 0;
+}
+
+.job_details_area .descript_wrap .single_wrap h4 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #001D38;
+  margin-bottom: 25px;
+}
+
+.job_details_area .descript_wrap .single_wrap p {
+  color: #7A838B;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+}
+
+.job_details_area .job_sumary {
+  background: #fff;
+}
+
+.job_details_area .job_sumary .summery_header {
+  border-bottom: 1px solid #EAEAEA;
+  padding: 40px;
+}
+
+.job_details_area .job_sumary .summery_header h3 {
+  font-size: 24px;
+  color: #001D38;
+  font-weight: 400;
+}
+
+.job_details_area .job_sumary .job_content {
+  padding: 40px;
+}
+
+.job_details_area .job_sumary .job_content ul li {
+  font-size: 16px;
+  font-weight: 400;
+  color: #AAB1B7;
+  line-height: 38px;
+  padding-left: 18px;
+  position: relative;
+}
+
+.job_details_area .job_sumary .job_content ul li::before {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #AAB1B7;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  left: 0;
+  content: '';
+  top: 16px;
+}
+
+.job_details_area .job_sumary .job_content ul li span {
+  color: #001D38;
+}
+
+.job_details_area .apply_job_form {
+  margin-top: 30px;
+  padding: 40px;
+}
+
+/* - 4 - Job Details - end
+==================================================================================================== */

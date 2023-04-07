@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Job Board</title>
+    <!-- Icon Css Incloude-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <!-- Bootstrap CSS File -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <!-- Custom Css Include-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <!-- start header section -->
+    <header>
+      <div class="header-area">
+        <div class="main-header-area">
+          <div class="container-fluid">
+            <div class="header_bottom_border">
+              <div class="row align-items-center">
+                <div class="col-xl-3 col-lg-2">
+                  <div class="logo">
+                    <a href="#">
+                      <h3>Job-Board</h3>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-xl-6 col-lg-7">
+                  <div class="main-menu d-none d-lg-block">
+                    <nav>
+                      <ul id="navigation">
+                        <li><a href="#">Home</a></li>
+                        {% if user.is_superuser %}
+                        <li><a href="#">Job Orders</a></li>
+                        <li><a href="#">Add Job</a></li>
+                        <li><a href="#">Add Category</a></li>
+                        {% endif %}
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                  <div class="Appointment">
+                    <div class="phone_num d-none d-xl-block">
+                      {% if user.is_authenticated %}
+                      <a style="padding-right: 20px" href="#">Profile</a>
+                      <a class="main-btn" href="#">Logout</a>
+                      {% else %}
+                      <a class="main-btn" href="#">Login</a>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- end header section -->
+    
+    {% block content %}{% endblock content %}
+
+    <!-- This Is All Plugins used-->
+    <!-- JQuery Plugins include-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <!-- Bootstrap 4 Plugins include-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <!-- Custom JQuery File-->
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>
